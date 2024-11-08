@@ -130,13 +130,21 @@ stage('Deploiement en staging'){
 
 post { // send email when the job has failed
     // ..
-    failure {
+    failure 
+     {
         echo "This will run if the job failed"
-        mail to: "fall-lewis.y@datascientest.com",
+        mail to: "dr.saadeh.mahmoud@gmail.com",
              subject: "${env.JOB_NAME} - Build # ${env.BUILD_ID} has failed",
              body: "For more info on the pipeline failure, check out the console output at ${env.BUILD_URL}"
     }
     // ..
+    success 
+     {
+        echo "This will run if the job successed"
+        mail to: "dr.saadeh.mahmoud@gmail.com",
+             subject: "${env.JOB_NAME} - Build # ${env.BUILD_ID} has successed",
+             body: "For more info on the pipeline success, check out the console output at ${env.BUILD_URL}"
+    }
 }
 }
 
