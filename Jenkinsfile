@@ -123,7 +123,7 @@ pipeline {
                       }
                  }
         }
-
+}
      post {
           // ..
           failure {
@@ -139,5 +139,4 @@ pipeline {
                body: "For more info, check out the console output at ${env.BUILD_URL}"
             }
         }
-}
 }
